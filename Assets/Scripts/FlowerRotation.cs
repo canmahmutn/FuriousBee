@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FlowerRotation : MonoBehaviour
 {
     public float ScrollSpeed = -10f;
@@ -9,23 +10,19 @@ public class FlowerRotation : MonoBehaviour
 
     public float counter = 0;
 
-    void Start()
+    public void Start()
     {
-        StartPos = transform.position *1.7f;
+        StartPos =  new Vector2(-8.758033f,3.55f);
     }
 
     void Update()
     {
         float newPos = Mathf.Repeat(Time.time * ScrollSpeed, 30f);
-        transform.position = StartPos + Vector2.right * newPos;
+
+        //transform.position = StartPos + Vector2.right * newPos;
+        transform.position=new Vector2((transform.position.x +ScrollSpeed),transform.position.y);
         counter = counter + Time.deltaTime;
         transform.Rotate(0,0,500*Time.deltaTime);
     }
-    private void OnTriggerEnter2D(Collider2D col1)
-    {
-        if (col1.gameObject.tag == "Player")
-        {
 
-        }
-    }
 }

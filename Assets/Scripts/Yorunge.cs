@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Yorunge : MonoBehaviour
 {
@@ -19,6 +20,13 @@ public class Yorunge : MonoBehaviour
     public bool flm = false;
     public float cooldown = 0;
     public float up_down=300;
+    public int FlowerCounter;
+    public Text CountText;
+    public int countflower=0;
+    public GameObject myflower ;
+
+   public bool isSpawned =false;
+
     Vector2 scale;
 
     void Start()
@@ -32,6 +40,9 @@ public class Yorunge : MonoBehaviour
         crossmovecounter = 0;
         crossmovecontrol2 = false;
         crossmovecounter2 = 0;
+        FlowerCounter = 0;
+        CountText.text = "Flower: " + FlowerCounter.ToString();
+        asd();
     }
 
 
@@ -174,5 +185,27 @@ public class Yorunge : MonoBehaviour
 
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D col1)
+    {
+        if (col1.gameObject.tag == "Flower")
+        {
+            Destroy(col1.gameObject);
+            FlowerCounter++;
+            CountText.text = "Flower: " + FlowerCounter.ToString();
+
+           StartCoroutine(abc());
+        }
+    }
+
+    IEnumerator abc() {
+        yield return new WaitForSeconds(0.5f);
+        GameObject spawn= Instantiate(myflower);
+        spawn.transform.position=new Vector2(-6.24f,Random.Range(3f,5f));
+    }
+    void asd(){
+        GameObject spawn= Instantiate(myflower);
+        spawn.transform.position=new Vector2(15,Random.Range(3f,5f));
+        Debug.Log("Geldi");
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7368355278808259415}
   - component: {fileID: 4959986925348598141}
   - component: {fileID: -5145990063137959510}
-  - component: {fileID: -1392153524378432755}
   - component: {fileID: -976866659951661870}
   m_Layer: 0
   m_Name: flower-1837356_640
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540412035061297865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44699, y: -5.3670573, z: 984.74194}
+  m_LocalPosition: {x: 0.44699, y: 6, z: 984.74194}
   m_LocalScale: {x: 0.22487155, y: 0.22487155, z: 0.22487155}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,31 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f74bdc8608b2cb4082cca959ab1f94d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScrollSpeed: -10
+  ScrollSpeed: -4
   counter: 0
-  Flower1: {fileID: 540412035061297865}
-  Flower2: {fileID: 540412035061297865}
---- !u!50 &-1392153524378432755
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540412035061297865}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &-976866659951661870
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +105,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
